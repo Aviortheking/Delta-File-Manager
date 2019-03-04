@@ -1,0 +1,32 @@
+main {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	cursor: pointer;
+}
+
+table th {
+	text-align: left;
+}
+
+table tr {
+	border-bottom: 1px solid #212121;
+	height: 50px;
+}
+
+table tr td:first-child {
+	padding-left: 60px;
+	background-repeat: no-repeat;
+}
+
+table tr.folder td:first-child {
+	background-image: url(https://image.flaticon.com/icons/svg/148/148953.svg);
+}
+
+table tr.file td:first-child {
+	background-image: url(https://image.flaticon.com/icons/svg/263/263103.svg)
+}
