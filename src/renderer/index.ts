@@ -1,6 +1,9 @@
 // import { render as nunjuckRender} from 'nunjucks';
 import fs from 'fs';
 import { sep } from 'path';
+import {
+	shell
+} from 'electron';
 import DeltaFile from '../common/DeltaFile';
 import './style.scss';
 import { Template } from 'nunjucks';
@@ -36,17 +39,17 @@ const showFolder = (folder: string) => {
 	app.innerHTML = tpl.render({files: els});
 	app.querySelectorAll("[data-file]").forEach((el) => {
 		el.addEventListener("click", function(this: HTMLElement) {
-			// console.log(this);
 			let folder = this.getAttribute("data-file");
-			if(folder != null) showFolder(folder);
+			if(folder != null) {
+				let file = DeltaFile.loadFileFromPath(folder);
+				if(file != undefined) {
+					if(file.type == 0) showFolder(folder);
+					else shell.openItem(file.path);
+				}
+
+			}
 		});
 	});
 }
 
 showFolder("/");
-
-// function loadFile(file: string) {
-// 	shell.openItem(file);
-// }
-// console.log(render("index.njk"));
-// console.log(loadFolder("/"));

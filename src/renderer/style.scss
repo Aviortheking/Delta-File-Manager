@@ -108,3 +108,64 @@ html, body {
 * {
 	user-select: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * List
+ */
+
+main {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	cursor: pointer;
+}
+
+table th {
+	text-align: left;
+}
+
+table tr {
+	border-bottom: 1px solid #aaa;
+	height: 50px;
+}
+
+table tr td {
+	border-left: 1px solid #eee;
+}
+
+table tr td:first-child {
+	padding-left: 60px;
+	background-repeat: no-repeat;
+	border-left: none;
+	background-size: 30px;
+	background-position-y: center;
+	background-position-x: 14px;
+}
+
+table tr.type-0 td:first-child {
+	background-image: url(../../static/icons/folder.svg);
+}
+
+table tr.type-1 td:first-child {
+	background-image: url(../../static/icons/file.svg)
+}

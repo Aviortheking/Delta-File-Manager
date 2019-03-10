@@ -11,8 +11,14 @@
 	</thead>
 	<tbody>
 	{% for file in files %}
-		<tr data-file="{{ file.path }}">
-			<td>{{ file.name }}</td>
+
+		<tr class="type-{{file.type}}" data-file="{{ file.path }}">
+			{% set thumb = file.getThumbnail() %}
+			{% if thumb != undefined %}
+				<td style="background-image: url({{ thumb }})">{{ file.name }}</td>
+			{% else %}
+				<td >{{ file.name }}</td>
+			{% endif %}
 			<td>{{ file.formatTime() }}</td>
 			<td>{{ file.formatSize() }}</td>
 		</tr>
