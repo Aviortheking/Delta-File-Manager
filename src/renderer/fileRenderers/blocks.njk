@@ -1,0 +1,38 @@
+{% extends "../index.njk" %}
+
+{% block filelist %}
+
+	<div class="grid">
+		{% for file in files %}
+		{% if file.type == "0" %}
+		{% set thumb = file.getThumbnail() %}
+		{% if thumb != undefined %}
+		<div class="grid-item folder" data-file={{ file.path }} style="background-image: url({{ thumb }})">
+		{% else %}
+		<div class="grid-item folder" data-file={{ file.path }}>
+		{% endif %}
+			{{file.name}}
+		</div>
+		{% endif %}
+		{% endfor %}
+
+	</div>
+
+	<div class="grid">
+		{% for file in files %}
+		{% if file.type == "1" %}
+		<div class="grid-item file" data-file="{{ file.path }}">
+			{% if file.getThumbnail() != undefined %}
+			<div class="item-preview" style='background-image: url("{{ file.getThumbnail() }}")'>
+			{% else %}
+			<div class="item-preview null">
+			{% endif %}
+			</div>
+			<div class="item-name">{{ file.name }}</div>
+			<div class="item-size">{{ file.formatSize() }}</div>
+		</div>
+		{% endif %}
+	{% endfor %}
+
+	</div>
+{% endblock %}

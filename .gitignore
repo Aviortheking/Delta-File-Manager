@@ -1,1 +1,7 @@
-node_modules
+.DS_Store
+dist/
+node_modules/
+thumbs.db
+yarn-error.log
+.yarnclean
+.vscode

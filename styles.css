@@ -14,13 +14,18 @@ table th {
 }
 
 table tr {
-	border-bottom: 1px solid #212121;
+	border-bottom: 1px solid #aaa;
 	height: 50px;
+}
+
+table tr td {
+	border-left: 1px solid #eee;
 }
 
 table tr td:first-child {
 	padding-left: 60px;
 	background-repeat: no-repeat;
+	border-left: none;
 }
 
 table tr.folder td:first-child {

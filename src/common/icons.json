@@ -1,0 +1,31 @@
+{
+	"folder": {
+		"name": {
+			"..": "icons/chevron-left.svg",
+			"git": "icons/github.svg",
+			".git": "icons/github.svg",
+			"pictures": "icons/image.svg",
+			"music": "icons/music.svg",
+			"videos": "icons/video.svg",
+			"public": "icons/users.svg",
+			"downloads": "icons/download.svg",
+			".vscode": "icons/code.svg",
+			"node_modules": "icons/package.svg",
+			".config": "icons/settings.svg",
+			"src": "icons/code.svg"
+		},
+		"path": {
+			"/home": "icons/home.svg"
+		}
+	},
+	"file": {
+		"name": {
+			".gitlab-ci.yaml": "icons/gitlab.svg"
+		},
+		"extension": {
+			"code-workspace": "icons/code.svg",
+			"coffee": "icons/coffee.svg"
+		}
+	}
+
+}

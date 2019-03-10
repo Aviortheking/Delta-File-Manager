@@ -1,18 +1,64 @@
 {
   "name": "delta-file-manager",
   "version": "0.1.0",
-  "description": "A customizable fiel manager",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron ."
-  },
-  "author": "Avior",
   "license": "MIT",
-  "devDependencies": {
-    "electron": "^4.0.6"
+  "homepage": "https://delta-wings.net/dfm",
+  "author": {
+    "name": "Florian bouillon",
+    "email": "florian.bouillon@delta-wings.net",
+    "url": "https://delta-wings.net/"
+  },
+  "scripts": {
+    "dev": "electron-webpack dev",
+    "compile": "electron-webpack",
+    "dist": "yarn compile && electron-builder",
+    "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
+  },
+  "build": {
+    "appId": "net.deltawings.deltafilemanager",
+    "productName": "Delta File Manager",
+    "copyright": "Copyright @ 2019 ${author}",
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "deb"
+        },
+        {
+          "target": "AppImage"
+        }
+      ]
+    }
   },
   "dependencies": {
-    "ts-node": "^8.0.2",
-    "typescript": "^3.3.3333"
+    "@types/nunjucks": "^3.1.1",
+    "@types/sharp": "^0.21.3",
+    "source-map-support": "^0.5.10"
+  },
+  "devDependencies": {
+    "electron": "4.0.1",
+    "electron-builder": "20.38.4",
+    "electron-webpack": "^2.6.2",
+    "electron-webpack-ts": "^3.1.1",
+    "node-sass": "^4.11.0",
+    "nunjucks": "^3.2.0",
+    "nunjucks-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "typescript": "^3.3.3333",
+    "webpack": "4.28.4",
+    "webpack-build-notifier": "^0.1.30"
   }
 }

@@ -1,0 +1,23 @@
+{% extends "../index.njk" %}
+
+{% block filelist %}
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Last Time modified</th>
+			<th>Size</th>
+		</tr>
+	</thead>
+	<tbody>
+	{% for file in files %}
+		<tr data-file="{{ file.path }}">
+			<td>{{ file.name }}</td>
+			<td>{{ file.formatTime() }}</td>
+			<td>{{ file.formatSize() }}</td>
+		</tr>
+	{% endfor %}
+	</tbody>
+
+</table>
+{% endblock %}
